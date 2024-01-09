@@ -2,7 +2,9 @@
 M-x toggle-truncate-lines
 * memo
 ** やり方
-　- GitHubで作成したリポジトリのURLをコピーし、ローカルリポジトリと接続する
+　- 'hiroto_push ファイル名.XX'でファイルをgitに共有出来るようなものを考えた
+
+GitHubで作成したリポジトリのURLをコピーし、ローカルリポジトリと接続する
 git remote add origin https://github.com/SuzukiHiroto08/practice.git
 
 githubにpushする
