@@ -21,8 +21,8 @@ Personal access tokens (classic)を入手、これ↓
 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
 これを無くしたい
 
-コマンド化を完璧に出来ていない
-
+コマンドの前に'./'を付ける必要がある。。。
+今動かしているディレクトリ内でファイルを探してるから？
 ** ubuntu code
 - Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.10.16.3-microsoft-standard-WSL2 x86_64)
 
