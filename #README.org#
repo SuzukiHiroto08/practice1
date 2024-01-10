@@ -1,17 +1,16 @@
-
 M-x toggle-truncate-lines
+
 * memo
 ** やり方
-　- 'hiroto_push ファイル名.XX'でファイルをgitに共有出来るようなものを考えた
+　- GitHubで作成したリポジトリのURLをコピーし、ローカルリポジトリと接続する
 
-GitHubで作成したリポジトリのURLをコピーし、ローカルリポジトリと接続する
 git remote add origin https://github.com/SuzukiHiroto08/practice.git
 
-githubにpushする
+ githubにpushする
 git add .
 git commit -m "Initial commit"
 git push -u origin master
-
+ nameとpassが求められる
 
 スマホのgithub公式アプリの作成したリポジトリからorgファイルを閲覧することが出来た
 ** 改善点
@@ -23,8 +22,8 @@ Personal access tokens (classic)を入手、これ↓
 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
 これを無くしたい
 
-コマンド化を完璧に出来ていない
-
+コマンドの前に'./'を付ける必要がある。。。
+今動かしているディレクトリ内でファイルを探してるから？
 ** ubuntu code
 - Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.10.16.3-microsoft-standard-WSL2 x86_64)
 

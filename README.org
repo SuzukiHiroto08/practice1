@@ -9,7 +9,7 @@ githubにpushする
 git add .
 git commit -m "Initial commit"
 git push -u origin master
-
+ nameとpassが求められる
 
 スマホのgithub公式アプリの作成したリポジトリからorgファイルを閲覧することが出来た
 ** 改善点
