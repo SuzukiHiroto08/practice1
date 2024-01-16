@@ -1,0 +1,81 @@
+# -*- coding: utf-8 -*-
+#file = Dir.glob("*.org")[0].match(/(.*).org/)[1]
+
+desc 'pdf'
+task :pdf do
+  file = 'handout'
+  t_file = 'handout'
+  lines = File.readlines("#{file}.org")
+  @title = lines[0].match(/#\+TITLE: (.+)/)[1]
+  @student_id = lines[1].match(/#\+ID: (.+)/)[1]
+  @name = lines[2].match(/#\+AUTHOR: (.+)/)[1]
+  command = "emacs #{file}.org --batch -f org-latex-export-to-latex --kill"
+  system command
+  lines = File.readlines("#{file}.tex")
+  lines = convert_thesis(lines)
+  File.open("#{t_file}.tex", 'w') do |f|
+    lines.each { |line| f.print line }
+  end
+  # system "platex #{file}"
+  commands = ["platex #{t_file}.tex",
+              "bibtex #{t_file}.tex",
+              "platex #{t_file}.tex",
+              "dvipdfmx #{t_file}.dvi",
+#              'rake rm'
+    ]
+  commands.each { |com| system com }
+
+  system "open ./#{t_file}.pdf"
+end
+
+def convert_thesis(lines)
+  puts title = lines[0]
+  head = <<'EOS'
+  \documentclass[a4j,twocolumn]{jsarticle}
+  \usepackage[dvipdfmx]{graphicx}
+  \usepackage{url}
+
+  \setlength{\textheight}{275mm}
+  \headheight 5mm
+  \topmargin -30mm
+  \textwidth 185mm
+  \oddsidemargin -15mm
+  \evensidemargin -15mm
+  \pagestyle{empty}
+
+
+  \begin{document}
+
+  \title{TITLE}
+  \author{情報科学科 \hspace{5mm} STUDENT_ID \hspace{5mm} NAME}
+  \date{}
+
+  \maketitle
+EOS
+  head.gsub!('TITLE', @title)
+  head.gsub!('STUDENT_ID', @student_id)
+  head.gsub!('NAME', @name)
+  new_line = [head]
+  lines[32..-1].each do |line|
+    new_line << line
+  end
+
+  new_line.each do |line|
+    line.gsub!('\tableofcontents', '')
+  end
+  return new_line
+end
+
+desc 'test'
+task :test do
+  str = Dir.glob('*.org')[0].match(/(.*).org/)[1]
+  p str
+end
+
+desc 'rm'
+task :rm do
+  t_file = 'handout'
+  commands = ['dvi', 'log', 'aux', 'out', 'tex', 'toc', 'lot', 'out.ps']
+  commands.each { |com| system "rm -rf #{t_file}.#{com}" }
+  system 'tidy'
+end

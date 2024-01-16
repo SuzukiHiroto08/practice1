@@ -21,6 +21,13 @@ Personal access tokens (classic)を入手、これ↓
 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
 これを無くしたい
 
+→git config --global credential.helper store
+git config --global user.name "SuzukiHiroto08"
+git config --global user.email "your.email@example.com"
+
+git remote set-url origin https://SuzukiHiroto08:YOUR_TOKEN@github.com/SuzukiHiroto08/practice.git
+これでユーザー名、パスワードを求められなくなった。
+
 コマンドの前に'./'を付ける必要がある。。。
 今動かしているディレクトリ内でファイルを探してるから？
 ** ubuntu code
