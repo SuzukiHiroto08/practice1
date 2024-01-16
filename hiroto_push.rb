@@ -17,9 +17,9 @@ unless FILE_PATH
 end
 
 # リモートリポジトリのURL
-#REMOTE_REPO_URL = "https://github.com/SuzukiHiroto08/practice.git"
+REMOTE_REPO_URL = "https://github.com/SuzukiHiroto08/practice.git"
 # リモートリポジトリのSSH
-REMOTE_REPO_URL = "git@github.com:SuzukiHiroto08/practice.git"
+#REMOTE_REPO_URL = "git@github.com:SuzukiHiroto08/practice.git"
 
 # 現在のディレクトリに移動
 Dir.chdir(File.expand_path('~/grad_research_23/senior/suzuki/practice'))
@@ -31,7 +31,7 @@ system('git add .')
 system('git commit -m "Update file"')
 
 # リモートリポジトリへの接続
-system("git remote add origin git@github.com:SuzukiHiroto08/practice.git")
+system("git remote add origin https://github.com/SuzukiHiroto08/practice.git")
 
 # プッシュ
 system('git push -u origin master')
