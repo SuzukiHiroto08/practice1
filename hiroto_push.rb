@@ -4,8 +4,8 @@
 require 'fileutils'
 
 # GitHubユーザー名とリポジトリ名
-USERNAME = "SuzukiHiroto08"
-REPO_NAME = "practice"
+#USERNAME = "SuzukiHiroto08"
+#REPO_NAME = "practice"
 
 # 引数からファイルのパスを取得
 FILE_PATH = ARGV[0]
