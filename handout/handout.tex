@@ -1,0 +1,108 @@
+\documentclass[a4j,twocolumn]{jsarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{url}
+
+\setlength{\textheight}{275mm}
+\headheight 5mm
+\topmargin -30mm
+\textwidth 185mm
+\oddsidemargin -15mm
+\evensidemargin -15mm
+\pagestyle{empty}
+
+
+\begin{document}
+
+\title{my\_helpのスマートフォンからの閲覧機能の追加}
+\author{情報科学科 \hspace{5mm} 27020708 \hspace{5mm} 鈴木 博大}
+\date{}
+
+\maketitle
+\label{sec:org5a1197a}
+西谷研では，メモソフトとしてmy\_helpを使用している．
+メモは，頻繁に読み返すことが重要であるが，
+my\_helpではPCを起動させる必要がある．
+手軽にメモを読み返すためには，
+スマートフォンやタブレットなどPC以外の端末からでも，
+メモの閲覧が可能となる必要がある．
+そこで本研究では，
+my\_helpで作成されるorgファイルの
+スマートフォンからの閲覧機能の追加を目的とした．
+
+\section{手法}
+\label{sec:orge37fc15}
+my\_helpでの実装を考えると，
+図\ref{fig:orgce283a0} の通り多様な
+オペレーティングシステム(OS)と
+クラウドストレージの組み合わせを想定している．
+my\_helpではCUIでの動作が前提であるため，
+GUIを極力使用しない実装を考える．
+今回は，実線で示した
+WindowsとGoogleDrive間のデータ共有での設定を行った．
+ここで，Windowsは
+Windows11上のWSL(windows subsystem for linux)上の
+Ubuntuでの動作を考えて，Linux標準コマンドの
+mountを試した．
+これにより，様々なクラウドストレージへアクセスし，
+ファイルやディレクトリの同期を行うことが可能と考えられる．
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=9cm]{./../figs/plat_cloud.png}
+\caption{\label{fig:orgce283a0}オペレーティングシステム(OS)とクラウドストレージ間の組み合わせ．}
+\end{figure}
+
+
+\section{結果}
+\label{sec:org220798e}
+my\_helpで作成したorg形式のメモを
+スマートフォンから閲覧できるようにする手順は以下の通りである．
+\begin{enumerate}
+\item orgファイルをhtmlに変換するために，Emacs上で
+orgmode-to-html(C-c C-e h h)を実行．
+\item Linux環境下で新しいディレクトリ'/mnt/g'を作成するために
+'sudo mkdir /mnt/g'のコマンドを実行．
+\item Google Driveのデスクトップを起動すると
+Gドライブとして認識される\cite{mount} .
+\item 'sudo mount -t drvfs G: /mnt/g'を実行して，マウント．
+\item 'cp FILE.html /mnt/g/my\_drive'
+で'FILE.html'をGドライブの'my\_drive'にコピー．
+\end{enumerate}
+この手順は，
+'mount'コマンドを使用して仮想的に
+ディレクトリに接続するものである．
+ここで'drvfs'はWSL上から
+マウントされた外部を管理するファイルシステムであり，
+'-t'はファイルシステムのタイプを指定するコマンドである．
+
+図\ref{fig:org9c2d906}はメモファイルを，
+htmlに表示形式を変えてスマートフォン上で
+表示させた画像である．
+目次が示され，そのリンクを辿ることで，
+見返したい内容を瞬時に表示できるようになった．
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=4.5cm]{./../figs/sumaho1.png}
+\caption{\label{fig:org9c2d906}メモをスマートフォンから表示．}
+\end{figure}
+
+\section{今後}
+\label{sec:orgbdc123f}
+この一連の操作をコマンドで動かせるようにし，
+my\_helpの中に組み込みむ．
+そこで，どの手順を自動化するか，
+どのような状況下でこれらのコマンドを
+使用するかを検討していく．
+また，WSLだけではなく，
+OSX,linuxなど他のOSではどうするか．
+異なるクラウドの場合の違った手段やコマンドを調べ，
+my\_helpの機能として組み込む．
+
+
+\small\setlength\baselineskip{10pt}
+\begin{thebibliography}{9}
+\bibitem{mount} Linuxのマウント(mount)について, "mount", https://eng-entrance.com/linux-mount.
+\bibitem{drvfs} WSL でマウントしたファイルシステムでもパーミッションを扱えるようにする, "drvfs", https://atmarkit.itmedia.co.jp/ait/articles/1806/08/news042.html.
+\end{thebibliography}
+\end{document}
