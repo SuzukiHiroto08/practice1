@@ -31,7 +31,7 @@ system('git add .')
 system('git commit -m "Update file"')
 
 # リモートリポジトリへの接続
-system("git remote add origin #{REMOTE_REPO_URL}")
+#system("git remote add origin #{REMOTE_REPO_URL}")
 
 # プッシュ
 system('git push -u origin master')
