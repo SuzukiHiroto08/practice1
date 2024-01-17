@@ -7,9 +7,9 @@ require 'fileutils'
 USERNAME = "SuzukiHiroto08"
 REPO_NAME = "practice1"
 # リモートリポジトリのURL
-REMOTE_REPO_URL = "https://github.com/#{USERNAME}/#{REPO_NAME}.git"
+#REMOTE_REPO_URL = "https://github.com/#{USERNAME}/#{REPO_NAME}.git"
 # リモートリポジトリのSSH
-#REMOTE_REPO_URL = "git@github.com:#{USERNAME}/#{REPO_NAME}.git"
+REMOTE_REPO_URL = "git@github.com:#{USERNAME}/#{REPO_NAME}.git"
 
 # 引数からファイルのパスを取得
 FILE_PATH = ARGV[0]
