@@ -6,8 +6,7 @@ require 'fileutils'
 # GitHubユーザー名とリポジトリ名
 USERNAME = "SuzukiHiroto08"
 REPO_NAME = "practice1"
-# リモートリポジトリのURL
-#REMOTE_REPO_URL = "https://github.com/#{USERNAME}/#{REPO_NAME}.git"
+
 # リモートリポジトリのSSH
 REMOTE_REPO_URL = "git@github.com:#{USERNAME}/#{REPO_NAME}.git"
 
@@ -25,12 +24,12 @@ end
 Dir.chdir(File.expand_path('~/grad_research_23/senior/suzuki/practice'))
 
 # 変更のステージング
-system('git add .')
+system("git add #{FILE_PATH}")
 
 # コミット
 system('git commit -m "Update file"')
 
-# リモートリポジトリへの接続
+# リモートリポジトリへの接続(始めの一回でいい)
 #system("git remote add origin #{REMOTE_REPO_URL}")
 
 # プッシュ
