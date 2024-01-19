@@ -34,8 +34,11 @@ system("git add .")
 # コミット
 system('git commit -m "Update file"')
 
+# masterからmainに変更
+system('git branch -M main')
+
 # リモートリポジトリへの接続(if文に書き換える)
 system("git remote add origin #{REMOTE_REPO_URL}")
 
-# プッシュ
-system('git push -u origin master')
+# プッシュ()
+system('git push -u origin main')
