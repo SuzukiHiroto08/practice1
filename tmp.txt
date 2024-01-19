@@ -1,0 +1,2 @@
+origin	git@github.com:SuzukiHiroto08/practice1.git (fetch)
+origin	git@github.com:SuzukiHiroto08/practice1.git (push)

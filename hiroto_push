@@ -1,32 +1,17 @@
 #!/usr/bin/env ruby
 # coding: utf-8
 
-require 'fileutils'
+remote_string = IO.popen('git remote -v'){|io| io.read}
+url = remote_string.lines.first.chomp
+pattern = "github\\.com:([^\\/]+)/([^\\.]+)\\.git"
+matches = url.match(pattern)
 
-# GitHubユーザー名とリポジトリ名
-#USERNAME = "SuzukiHiroto08"
-#REPO_NAME = "practice1"
+USERNAME = matches[1]
+REPO_NAME = matches[2]
 
-print 'ユーザーネームを入力> '
-USERNAME = gets.chomp.strip
-
-print 'リポジトリ名を入力> '
-REPO_NAME = gets.chomp.strip
 
 # リモートリポジトリのSSH
 REMOTE_REPO_URL = "git@github.com:#{USERNAME}/#{REPO_NAME}.git"
-
-# 引数からファイルのパスを取得
-#FILE_PATH = ARGV[0]
-
-# 確認: 引数がない場合は終了
-#unless FILE_PATH
-#  puts "Usage: ./hiroto_push <file>"
-#  exit 1
-#end
-
-# 現在のディレクトリに移動
-#Dir.chdir(File.expand_path('~/grad_research_23/senior/suzuki/practice'))
 
 # 変更のステージング
 system("git add .")
@@ -34,8 +19,18 @@ system("git add .")
 # コミット
 system('git commit -m "Update file"')
 
-# リモートリポジトリへの接続(if文に書き換える)
-system("git remote add origin #{REMOTE_REPO_URL}")
+# masterからmainに変更
+system('git branch -M main')
 
-# プッシュ
-system('git push -u origin master')
+# remoteリポジトリに接続してるかどうかの判定
+existing_remote = system('git remote -v')
+
+if existing_remote.nil?
+  system("git remote add origin #{REMOTE_REPO_URL}")
+  puts "リモートリポジトリを追加しました。"
+else
+  puts "リモートリポジトリはすでに存在しています。追加処理はスキップされました。"
+end
+
+# プッシュ()
+system('git push -u origin main')

@@ -1,0 +1,4 @@
+#puts system('git remote -v')
+string = system('git remote -v')
+
+puts string.lines
