@@ -9,11 +9,15 @@ repo_name = gets.chomp.strip
 print 'Enter your GitHub username: '
 username = gets.chomp.strip
 
+# publicかprivateかを聞く
+print 'Enter public or private: '
+flag = gets.chomp.strip
+
 # リモートリポジトリのSSH
 remote_repo_url = "git@github.com:#{username}/#{repo_name}.git"
 
 # リモートリポジトリの作成
-system("gh repo create #{username}/#{repo_name}")
+system("gh repo create #{username}/#{repo_name} --#{flag}")
 
 # GitHubにログイン
 system('gh auth login')
