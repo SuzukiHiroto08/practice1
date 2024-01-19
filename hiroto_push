@@ -37,7 +37,7 @@ system('git commit -m "Update file"')
 # masterからmainに変更
 system('git branch -M main')
 
-existing_remote = 'git remote -v'.line.grep(/origin/).first
+existing_remote = 'git remote -v'.lines.grep(/origin/).first
 
 # リモートリポジトリへの接続(if文に書き換える)
 if existing_remote.nil?
