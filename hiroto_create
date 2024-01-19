@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+# coding: utf-8
+
+# リポジトリ名の入力
+print 'Enter the repository name: '
+repo_name = gets.chomp.strip
+
+# GitHubユーザー名の入力
+print 'Enter your GitHub username: '
+username = gets.chomp.strip
+
+# リモートリポジトリの作成
+system("gh repo create #{username}/#{repo_name}")
+
+# GitHubにログイン
+system('gh auth login')
+
+# リポジトリのクローン
+system("git clone git@github.com:#{username}/#{repo_name}.git")
+
+# リモートリポジトリへの接続
+Dir.chdir(repo_name)
+system("git remote set-url origin git@github.com:#{username}/#{repo_name}.git")
