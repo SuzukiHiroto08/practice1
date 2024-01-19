@@ -37,8 +37,15 @@ system('git commit -m "Update file"')
 # masterからmainに変更
 system('git branch -M main')
 
+existing_remote = 'git remote -v'.line.grep(/origin/).first
+
 # リモートリポジトリへの接続(if文に書き換える)
-system("git remote add origin #{REMOTE_REPO_URL}")
+if existing_remote.nil?
+  system("git remote add origin #{REMOTE_REPO_URL}")
+  puts "リモートリポジトリを追加しました。"
+else
+  puts "リモートリポジトリはすでに存在しています。追加処理はスキップされました。"
+end
 
 # プッシュ()
 system('git push -u origin main')
