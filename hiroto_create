@@ -16,8 +16,11 @@ system("gh repo create #{username}/#{repo_name}")
 system('gh auth login')
 
 # リポジトリのクローン
-system("git clone git@github.com:#{username}/#{repo_name}.git")
+# system("git clone git@github.com:#{username}/#{repo_name}.git")
 
 # リモートリポジトリへの接続
-Dir.chdir(repo_name)
-system("git remote add origin git@github.com:#{username}/#{repo_name}.git")
+#Dir.chdir(repo_name)
+#system("git remote set-url origin git@github.com:#{username}/#{repo_name}.git")
+
+# リモートリポジトリへの接続(if文に書き換える)
+system("git remote add origin #{REMOTE_REPO_URL}")
