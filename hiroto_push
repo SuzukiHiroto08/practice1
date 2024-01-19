@@ -2,11 +2,20 @@
 # coding: utf-8
 
 # GitHubユーザー名とリポジトリ名
-print 'ユーザーネームを入力> '
-USERNAME = gets.chomp.strip
+#print 'ユーザーネームを入力> '
+#USERNAME = gets.chomp.strip
 
-print 'リポジトリ名を入力> '
-REPO_NAME = gets.chomp.strip
+#print 'リポジトリ名を入力> '
+#REPO_NAME = gets.chomp.strip
+
+remote_string = IO.popen('git remote -v'){|io| io.read}
+url = remote_string.lines.first.chomp
+pattern = "github\\.com:([^\\/]+)/([^\\.]+)\\.git"
+matches = url.match(pattern)
+
+USERNAME = matches[1]
+REPO_NAME = matches[2]
+
 
 # リモートリポジトリのSSH
 REMOTE_REPO_URL = "git@github.com:#{USERNAME}/#{REPO_NAME}.git"
