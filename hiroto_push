@@ -1,13 +1,6 @@
 #!/usr/bin/env ruby
 # coding: utf-8
 
-# GitHubユーザー名とリポジトリ名
-#print 'ユーザーネームを入力> '
-#USERNAME = gets.chomp.strip
-
-#print 'リポジトリ名を入力> '
-#REPO_NAME = gets.chomp.strip
-
 remote_string = IO.popen('git remote -v'){|io| io.read}
 url = remote_string.lines.first.chomp
 pattern = "github\\.com:([^\\/]+)/([^\\.]+)\\.git"
