@@ -22,5 +22,5 @@ system("gh repo create #{username}/#{repo_name} --#{flag}")
 # GitHubにログイン
 system('gh auth login')
 
-# リモートリポジトリへの接続(if文に書き換える)
+# リモートリポジトリへの接続
 system("git remote add origin #{remote_repo_url}")
