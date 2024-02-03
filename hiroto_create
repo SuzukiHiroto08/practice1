@@ -51,7 +51,7 @@ unless gh_installed
       exit(1)
     end
 
-  when 'いいえ', 'no'
+  when 'no'
     puts "インストールを中止しました。hiroto_createを使用するには手動でghコマンドをインストールしてください。"
     exit(1)
 
