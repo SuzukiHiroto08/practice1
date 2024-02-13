@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="jp" xml:lang="jp">
+<head>
+<!-- 2024-02-13 Tue 15:09 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>title</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="HirotoSuzuki" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">title</h1>
+<p>
+M-x toggle-truncate-lines
+</p>
+<div id="outline-container-orgfd94d0d" class="outline-2">
+<h2 id="orgfd94d0d"><span class="section-number-2">1</span> memo</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgdf4b680" class="outline-3">
+<h3 id="orgdf4b680"><span class="section-number-3">1.1</span> やり方</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+　- GitHubで作成したリポジトリのURLをコピーし、ローカルリポジトリと接続する
+git remote add origin <a href="https://github.com/SuzukiHiroto08/practice.git">https://github.com/SuzukiHiroto08/practice.git</a>
+</p>
+
+<p>
+githubにpushする
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+ nameとpassが求められる
+</p>
+
+<p>
+スマホのgithub公式アプリの作成したリポジトリからorgファイルを閲覧することが出来た
+</p>
+</div>
+</div>
+<div id="outline-container-org88cd1ad" class="outline-3">
+<h3 id="org88cd1ad"><span class="section-number-3">1.2</span> 改善点</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>hiroto_push.rb</li>
+</ul>
+
+<p>
+[./hiroto_push ファイル名]コマンドでファイルをpushすることが出来たが、毎回Usernameとpasswordが求められる。
+passwordは
+Personal access tokens (classic)を入手、これ↓
+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
+これを無くしたい
+</p>
+
+<p>
+→git config &#x2013;global credential.helper store
+git config &#x2013;global user.name "SuzukiHiroto08"
+git config &#x2013;global user.email "your.email@example.com"
+</p>
+
+<p>
+git remote set-url origin <a href="https://SuzukiHiroto08:YOUR_TOKEN@github.com/SuzukiHiroto08/practice.git">https://SuzukiHiroto08:YOUR_TOKEN@github.com/SuzukiHiroto08/practice.git</a>
+これでユーザー名、パスワードを求められなくなった。
+</p>
+
+<p>
+コマンドの前に'./'を付ける必要がある。。。
+今動かしているディレクトリ内でファイルを探してるから？
+</p>
+</div>
+</div>
+<div id="outline-container-orgf919dda" class="outline-3">
+<h3 id="orgf919dda"><span class="section-number-3">1.3</span> ubuntu code</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.10.16.3-microsoft-standard-WSL2 x86_64)
+
+<ul class="org-ul">
+<li>Documentation:  <a href="https://help.ubuntu.com">https://help.ubuntu.com</a></li>
+<li>Management:     <a href="https://landscape.canonical.com">https://landscape.canonical.com</a></li>
+<li>Support:        <a href="https://ubuntu.com/advantage">https://ubuntu.com/advantage</a></li>
+</ul></li>
+</ul>
+
+<p>
+This message is shown once a day. To disable it please create the/home/hiroto/.hushlogin file.
+hiroto@DESKTOP-8ELO98Q:~$ fish
+Welcome to fish, the friendly interactive shell
+Type help for instructions on how to use fish
+hiroto@DESKTOP-8ELO98Q ~&gt; cd grad_research_23/senior/
+hiroto@DESKTOP-8ELO98Q ~/g/senior (main)&gt; ls
+hiroto_help  hosoi  kazuki  kazuki_help  manato  nakata  suzuki
+hiroto@DESKTOP-8ELO98Q ~/g/senior (main)&gt; cd suzuki
+hiroto@DESKTOP-8ELO98Q ~/g/s/suzuki (main)&gt; ls
+archives  layer_list  multiscale
+hiroto@DESKTOP-8ELO98Q ~/g/s/suzuki (main)&gt; mkdir practice
+hiroto@DESKTOP-8ELO98Q ~/g/s/suzuki (main)&gt; cd practice
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (main)&gt; git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config &#x2013;global init.defaultBranch &lt;name&gt;
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m &lt;name&gt;
+Initialized empty Git repository in <i>home/hiroto/grad_research_23/senior/suzuki/practice</i>.git/
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; ls
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; emacs README.org
+fish: Job 1, 'emacs README.org' has stopped
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; ls
+README.org
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; git remote add origin <a href="https://github.com/SuzukiHiroto08/practice.git">https://github.com/SuzukiHiroto08/practice.git</a>
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; git add .
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; git commit -m "Initial commit"
+[master (root-commit) ebf7db4] Initial commit
+ 1 file changed, 3 insertions(+)
+ create mode 100644 README.org
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; git push -u origin masterUsername for 'https://github.com': SuzukiHiroto08
+Password for 'https://SuzukiHiroto08@github.com':
+remote: Support for password authentication was removed on August 13, 2021.remote: Please see <a href="https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls">https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls</a> for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/SuzukiHiroto08/practice.git/'
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master) [128]&gt; git push -u origin
+master
+Username for 'https://github.com': SuzukiHiroto08
+Password for 'https://SuzukiHiroto08@github.com': ⏎                        hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master) [SIGINT]&gt; There are still jobs active:
+</p>
+
+<p>
+ PID  Command
+8835  emacs README.org
+</p>
+
+<p>
+A second attempt to exit will terminate them.
+Use 'disown PID' to remove jobs from the list without terminating them.
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; git push -u origin masterUsername for 'https://github.com': SuzukiHiroto08
+Password for 'https://SuzukiHiroto08@github.com':
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 233 bytes | 233.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To <a href="https://github.com/SuzukiHiroto08/practice.git">https://github.com/SuzukiHiroto08/practice.git</a>
+</p>
+<ul class="org-ul">
+<li>[new branch]      master -&gt; master</li>
+</ul>
+<p>
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; emacs hiroto_push.rb
+fish: Job 2, 'emacs hiroto_push.rb' has stopped
+hiroto@DESKTOP-8ELO98Q <code>/g/s/s/practice (master)&gt; ls
+README.org  hiroto_push.rb  hiroto_push.rb</code>
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; emacs README.org
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; ./hiroto_push.rb README.org
+fish: The file './hiroto_push.rb' is not executable by this user
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master) [126]&gt; chmod +x hiroto_push.rb
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; ./hiroto_push.rb README.org
+./hiroto_push.rb: 5: require: not found
+./hiroto_push.rb: 8: USERNAME: not found
+./hiroto_push.rb: 9: REPO_NAME: not found
+./hiroto_push.rb: 12: ORG_FILE_PATH: not found
+./hiroto_push.rb: 15: unless: not found
+./hiroto_push.rb: 16: puts: not found
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master) [1]&gt; emacs hiroto_push.rb
+fish: Job 3, 'emacs hiroto_push.rb' has stopped
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master) [1]&gt; fg
+Send job 3, 'emacs hiroto_push.rb' to foreground
+fish: Job 3, 'emacs hiroto_push.rb' has stopped
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; which ruby
+/usr/bin/ruby
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; fg
+Send job 3, 'emacs hiroto_push.rb' to foreground
+fish: Job 3, 'emacs hiroto_push.rb' has stopped
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; chmod +x hiroto_push.rb
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; ./hiroto_push.rb README.org
+./hiroto_push.rb:23:in `chdir': No such file or directory @ dir_s_chdir - /home/hiroto/org_files (Errno::ENOENT)
+        from ./hiroto_push.rb:23:in `&lt;main&gt;'
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master) [1]&gt; fg
+Send job 3, 'emacs hiroto_push.rb' to foreground
+fish: Job 3, 'emacs hiroto_push.rb' has stopped
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; pwd
+/home/hiroto/grad_research_23/senior/suzuki/practice
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; fg
+Send job 3, 'emacs hiroto_push.rb' to foreground
+fish: Job 3, 'emacs hiroto_push.rb' has stopped
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; ./hiroto_push.rb README.org
+/usr/lib/ruby/3.0.0/fileutils.rb:1596:in `block in fu_each_src_dest': same file: README.org and ./README.org (ArgumentError)
+        from /usr/lib/ruby/3.0.0/fileutils.rb:1611:in `fu_each_src_dest0'
+        from /usr/lib/ruby/3.0.0/fileutils.rb:1595:in `fu_each_src_dest'
+        from /usr/lib/ruby/3.0.0/fileutils.rb:432:in `cp'
+        from ./hiroto_push.rb:26:in `&lt;main&gt;'
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master) [1]&gt; fg
+Send job 3, 'emacs hiroto_push.rb' to foreground
+fish: Job 3, 'emacs hiroto_push.rb' has stopped
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; ./hiroto_push.rb README.org
+/usr/lib/ruby/3.0.0/fileutils.rb:1596:in `block in fu_each_src_dest': same file: README.org and README.org (ArgumentError)
+        from /usr/lib/ruby/3.0.0/fileutils.rb:1613:in `fu_each_src_dest0'
+        from /usr/lib/ruby/3.0.0/fileutils.rb:1595:in `fu_each_src_dest'
+        from /usr/lib/ruby/3.0.0/fileutils.rb:432:in `cp'
+        from ./hiroto_push.rb:26:in `&lt;main&gt;'
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master) [1]&gt; fg
+Send job 3, 'emacs hiroto_push.rb' to foreground
+fish: Job 3, 'emacs hiroto_push.rb' has stopped
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; ./hiroto_push.rb README.org
+/usr/lib/ruby/3.0.0/fileutils.rb:429:in `cp': unknown keyword: :force (ArgumentError)
+        from ./hiroto_push.rb:26:in `&lt;main&gt;'
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master) [1]&gt; fg
+Send job 3, 'emacs hiroto_push.rb' to foreground
+fish: Job 3, 'emacs hiroto_push.rb' has stopped
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; ./hiroto_push.rb README.org
+/usr/lib/ruby/3.0.0/fileutils.rb:1596:in `block in fu_each_src_dest': same file: README.org and README.org (ArgumentError)
+        from /usr/lib/ruby/3.0.0/fileutils.rb:1613:in `fu_each_src_dest0'
+        from /usr/lib/ruby/3.0.0/fileutils.rb:1595:in `fu_each_src_dest'
+        from /usr/lib/ruby/3.0.0/fileutils.rb:542:in `mv'
+        from ./hiroto_push.rb:26:in `&lt;main&gt;'
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master) [1]&gt; fg
+Send job 3, 'emacs hiroto_push.rb' to foreground
+</p>
+
+
+
+<p>
+fish: Job 3, 'emacs hiroto_push.rb' has stopped
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; ./hiroto_push.rb README.org
+/usr/lib/ruby/3.0.0/fileutils.rb:1596:in `block in fu_each_src_dest': same file: README.org and README.org (ArgumentError)
+        from /usr/lib/ruby/3.0.0/fileutils.rb:1613:in `fu_each_src_dest0'
+        from /usr/lib/ruby/3.0.0/fileutils.rb:1595:in `fu_each_src_dest'
+        from /usr/lib/ruby/3.0.0/fileutils.rb:432:in `cp'
+        from ./hiroto_push.rb:26:in `&lt;main&gt;'
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master) [1]&gt; fg
+Send job 3, 'emacs hiroto_push.rb' to foreground
+fish: Job 3, 'emacs hiroto_push.rb' has stopped
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; ./hiroto_push.rb README.org
+Error: README.org already exists. Please choose a different name or remove the existing file.
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master) [1]&gt; fg
+Send job 3, 'emacs hiroto_push.rb' to foreground
+fish: Job 3, 'emacs hiroto_push.rb' has stopped
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; ./hiroto_push.rb README.org
+Error: README.org already exists. Please choose a different name or remove the existing file.
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master) [1]&gt; fg
+Send job 3, 'emacs hiroto_push.rb' to foreground
+fish: Job 3, 'emacs hiroto_push.rb' has stopped
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; ./hiroto_push.rb README.org
+Error: README.org already exists. Please choose a different name or remove the existing file.
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master) [1]&gt; fg
+Send job 3, 'emacs hiroto_push.rb' to foreground
+fish: Job 3, 'emacs hiroto_push.rb' has stopped
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; ./hiroto_push.rb README.org
+Error: README.org already exists. Please choose a different name or remove the existing file.
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master) [1]&gt; fg
+Send job 3, 'emacs hiroto_push.rb' to foreground
+fish: Job 3, 'emacs hiroto_push.rb' has stopped
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; fg
+Send job 3, 'emacs hiroto_push.rb' to foreground
+fish: Job 3, 'emacs hiroto_push.rb' has stopped
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; ./hiroto_push.rb README.org
+Error: README.org already exists. Please choose a different name or remove the existing file.
+hiroto@DESKTOP-8ELO98Q <code>/g/s/s/practice (master) [1]&gt; ls
+README.org  hiroto_push.rb  hiroto_push.rb</code>
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; emacs hiroto.org
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; ./hiroto_push.rb hiroto.org
+Error: README.org already exists. Please choose a different name or remove the existing file.
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master) [1]&gt; fg
+Send job 3, 'emacs hiroto_push.rb' to foreground
+fish: Job 3, 'emacs hiroto_push.rb' has stopped
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; ./hiroto_push.rb hiroto.org
+./hiroto_push.rb:23:in `chdir': No such file or directory @ dir_s_chdir - /home/hiroto/path/to/your/local/repo (Errno::ENOENT)
+        from ./hiroto_push.rb:23:in `&lt;main&gt;'
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master) [1]&gt; pwd
+/home/hiroto/grad_research_23/senior/suzuki/practice
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; fg
+Send job 3, 'emacs hiroto_push.rb' to foreground
+fish: Job 3, 'emacs hiroto_push.rb' has stopped
+hiroto@DESKTOP-8ELO98Q ~/g/s/s/practice (master)&gt; ./hiroto_push.rb hiroto.org
+[master d0ad3e6] Update file
+ 4 files changed, 82 insertions(+), 1 deletion(-)
+ create mode 100644 hiroto.org
+ create mode 100755 hiroto_push.rb
+ create mode 100755 hiroto_push.rb~
+error: remote origin already exists.
+Username for 'https://github.com': fg
+Password for 'https://fg@github.com': fish: Job 4, './hiroto_push.rb hiroto.org' has stopped
+</p>
+</div>
+</div>
+<div id="outline-container-org812753d" class="outline-3">
+<h3 id="org812753d"><span class="section-number-3">1.4</span> Matz</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>ソフトウェアには物理的実体がないから名前が重要</li>
+</ul>
+<p>
+　「適切に名前を付けることが出来る」と「その概念を理解している」は近い。プログラムの関数、変数もそう。
+</p>
+
+<p>
+　
+</p>
+</div>
+</div>
+<div id="outline-container-orgac34a36" class="outline-3">
+<h3 id="orgac34a36"><span class="section-number-3">1.5</span> gitで共有するメリット</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>gitの仕組みとしてファイルの変更履歴を記録したり、追跡することが出来る。</li>
+</ul>
+<p>
+　共同作業を行う際、共有しているフォルダのコピーを自分のPCに作ることが出来る。
+　gituhub公式アプリをスマートフォンからインストールすると、ファイルの内容をスマートフォンからでも閲覧できる。これにより、外出時などPCが手元にない状況でも、ファイルを閲覧できる。
+　
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: HirotoSuzuki</p>
+<p class="date">Created: 2024-02-13 Tue 15:09</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

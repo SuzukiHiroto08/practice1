@@ -1,3 +1,14 @@
+#+OPTIONS: ^:{}
+#+STARTUP: indent nolineimages overview num
+#+TITLE: title
+#+AUTHOR: HirotoSuzuki
+#+EMAIL:     (concat "eyc69652@kwansei.ac.jp")
+#+LANGUAGE:  jp
+# +OPTIONS:   H:4 toc:t num:2
+#+OPTIONS:   toc:nil
+#+TAG: hoge, hoge2
+#+TWITTER: off
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
 M-x toggle-truncate-lines
 * memo
