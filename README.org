@@ -16,10 +16,10 @@ M-x toggle-truncate-lines
 　- GitHubで作成したリポジトリのURLをコピーし、ローカルリポジトリと接続する
 git remote add origin https://github.com/SuzukiHiroto08/practice.git
 
-githubにpushする
-git add .
-git commit -m "Initial commit"
-git push -u origin master
+- githubにpushする
+- git add .
+- git commit -m "Initial commit"
+- git push -u origin master
  nameとpassが求められる
 
 スマホのgithub公式アプリの作成したリポジトリからorgファイルを閲覧することが出来た
@@ -31,10 +31,11 @@ passwordは
 Personal access tokens (classic)を入手、これ↓
 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
 これを無くしたい
-
-→git config --global credential.helper store
+#+begin_src bash
+git config --global credential.helper store
 git config --global user.name "SuzukiHiroto08"
 git config --global user.email "your.email@example.com"
+#+end_src
 
 git remote set-url origin https://SuzukiHiroto08:YOUR_TOKEN@github.com/SuzukiHiroto08/practice.git
 これでユーザー名、パスワードを求められなくなった。

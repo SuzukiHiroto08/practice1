@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="jp" xml:lang="jp">
 <head>
-<!-- 2024-02-13 Tue 15:29 -->
+<!-- 2024-02-13 Tue 15:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>title</title>
@@ -68,33 +68,33 @@ for the JavaScript code in this tag.
 <p>
 M-x toggle-truncate-lines
 </p>
-<div id="outline-container-org34cbb56" class="outline-2">
-<h2 id="org34cbb56"><span class="section-number-2">1</span> memo</h2>
+<div id="outline-container-orgfd94d0d" class="outline-2">
+<h2 id="orgfd94d0d"><span class="section-number-2">1</span> memo</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org8c69ccd" class="outline-3">
-<h3 id="org8c69ccd"><span class="section-number-3">1.1</span> やり方</h3>
+<div id="outline-container-orgdf4b680" class="outline-3">
+<h3 id="orgdf4b680"><span class="section-number-3">1.1</span> やり方</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 　- GitHubで作成したリポジトリのURLをコピーし、ローカルリポジトリと接続する
 git remote add origin <a href="https://github.com/SuzukiHiroto08/practice.git">https://github.com/SuzukiHiroto08/practice.git</a>
 </p>
 
-<ul class="org-ul">
-<li>githubにpushする</li>
-<li>git add .</li>
-<li>git commit -m "Initial commit"</li>
-<li>git push -u origin master
-nameとpassが求められる</li>
-</ul>
+<p>
+githubにpushする
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+ nameとpassが求められる
+</p>
 
 <p>
 スマホのgithub公式アプリの作成したリポジトリからorgファイルを閲覧することが出来た
 </p>
 </div>
 </div>
-<div id="outline-container-org965465c" class="outline-3">
-<h3 id="org965465c"><span class="section-number-3">1.2</span> 改善点</h3>
+<div id="outline-container-org88cd1ad" class="outline-3">
+<h3 id="org88cd1ad"><span class="section-number-3">1.2</span> 改善点</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>hiroto_push.rb</li>
@@ -107,12 +107,12 @@ Personal access tokens (classic)を入手、これ↓
 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
 これを無くしたい
 </p>
-<div class="org-src-container">
-<pre class="src src-bash">git config --global credential.helper store
-git config --global user.name <span style="color: #8b7355;">"SuzukiHiroto08"</span>
-git config --global user.email <span style="color: #8b7355;">"your.email@example.com"</span>
-</pre>
-</div>
+
+<p>
+→git config &#x2013;global credential.helper store
+git config &#x2013;global user.name "SuzukiHiroto08"
+git config &#x2013;global user.email "your.email@example.com"
+</p>
 
 <p>
 git remote set-url origin <a href="https://SuzukiHiroto08:YOUR_TOKEN@github.com/SuzukiHiroto08/practice.git">https://SuzukiHiroto08:YOUR_TOKEN@github.com/SuzukiHiroto08/practice.git</a>
@@ -125,8 +125,8 @@ git remote set-url origin <a href="https://SuzukiHiroto08:YOUR_TOKEN@github.com/
 </p>
 </div>
 </div>
-<div id="outline-container-orgd8e40be" class="outline-3">
-<h3 id="orgd8e40be"><span class="section-number-3">1.3</span> ubuntu code</h3>
+<div id="outline-container-orgf919dda" class="outline-3">
+<h3 id="orgf919dda"><span class="section-number-3">1.3</span> ubuntu code</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
 <li>Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.10.16.3-microsoft-standard-WSL2 x86_64)
@@ -342,8 +342,8 @@ Password for 'https://fg@github.com': fish: Job 4, './hiroto_push.rb hiroto.org'
 </p>
 </div>
 </div>
-<div id="outline-container-org1a0eba9" class="outline-3">
-<h3 id="org1a0eba9"><span class="section-number-3">1.4</span> Matz</h3>
+<div id="outline-container-org812753d" class="outline-3">
+<h3 id="org812753d"><span class="section-number-3">1.4</span> Matz</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
 <li>ソフトウェアには物理的実体がないから名前が重要</li>
@@ -357,8 +357,8 @@ Password for 'https://fg@github.com': fish: Job 4, './hiroto_push.rb hiroto.org'
 </p>
 </div>
 </div>
-<div id="outline-container-orgfe730d0" class="outline-3">
-<h3 id="orgfe730d0"><span class="section-number-3">1.5</span> gitで共有するメリット</h3>
+<div id="outline-container-orgac34a36" class="outline-3">
+<h3 id="orgac34a36"><span class="section-number-3">1.5</span> gitで共有するメリット</h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li>gitの仕組みとしてファイルの変更履歴を記録したり、追跡することが出来る。</li>
@@ -374,7 +374,7 @@ Password for 'https://fg@github.com': fish: Job 4, './hiroto_push.rb hiroto.org'
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: HirotoSuzuki</p>
-<p class="date">Created: 2024-02-13 Tue 15:29</p>
+<p class="date">Created: 2024-02-13 Tue 15:09</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
